@@ -1,8 +1,11 @@
 package com.saivankina.services;
 import com.saivankina.entity.Vehicle;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+@Service
 public interface VehicleService {
 
      List<Vehicle> findAl();

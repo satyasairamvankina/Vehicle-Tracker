@@ -35,6 +35,7 @@ public class VehicleServiceImpl implements VehicleService{
 
     @Transactional
     public Vehicle createVehicle(Vehicle vehicle) {
+
         Vehicle vehi = (Vehicle) vehicleRepository.save(vehicle);
         if(vehi == null){
             throw  new ResourceBadRequest("Vehicle is  "+ vehicle +" can not be created");

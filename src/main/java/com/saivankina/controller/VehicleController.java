@@ -1,7 +1,9 @@
 package com.saivankina.controller;
 
 
+import com.saivankina.entity.Alert;
 import com.saivankina.entity.Vehicle;
+import com.saivankina.services.AlertService;
 import com.saivankina.services.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,12 +20,15 @@ public class VehicleController {
     @Autowired
     private VehicleService vehicleService;
 
+    @Autowired
+    private AlertService alertService;
+
     @GetMapping
     public List<Vehicle> findAll(){
        return vehicleService.findAl();
     }
 
-    @GetMapping({"id"})
+    @GetMapping({"{id}"})
     public Vehicle findById(@PathVariable("id")  String id){
         return  vehicleService.findById(id);
     }
@@ -74,6 +79,10 @@ public class VehicleController {
     }
 
 
+    @GetMapping("{id}/alerts")
+    public List<Alert> fetchAllalertsOfVehicle(@PathVariable("id")  String id){
+        return alertService.fetchAllalertsOfVehicle(id);
+    }
 
 
 

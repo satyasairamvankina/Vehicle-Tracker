@@ -19,7 +19,7 @@ public interface AlertService {
     Alert creteAlertBasedOnParameter(Priority priority, String vin, String alertDescription);
     Alert findByVin(String vin);
     List<Alert> fetchAlertByTime(int hours);
-    List<Alert> fetchAllalertsOfVehivle(String vin);
+    List<Alert> fetchAllalertsOfVehicle(String vin);
     List<Location> fetchLocationBasedOnTime(int time);
     void checkAlerts(Readings readings, Tires tire, Vehicle vehicle);
 

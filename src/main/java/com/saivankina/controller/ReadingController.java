@@ -31,7 +31,7 @@ public class ReadingController {
     public Readings create(@RequestBody Readings readings){
         System.out.println("reading are "+readings);
         Readings read = readingService.createReading(readings);
-        return read;
+            return read;
     }
 
 

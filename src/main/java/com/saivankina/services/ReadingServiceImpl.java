@@ -46,10 +46,14 @@ public class ReadingServiceImpl implements  ReadingService {
 
     @Override
     public Readings createReading(Readings readings) {
+        if(readings == null){
+            throw  new ResourceBadRequest("Vehicle is  "+ readings +" can not be created");
+        }
         System.out.println("reading are "+readings);
         Tires tire = tiresRepository.save(readings.getTires());
         Readings readings1 = readingsRepository.save(readings);
-        if(readings1 == null){
+        System.out.println("*****************reading 1 are "+readings1);
+        if(readings1 == null ){
             throw  new ResourceBadRequest("Vehicle is  "+ readings1 +" can not be created");
         }
         Vehicle vehicle = vehicleService.findById(readings1.getVin());

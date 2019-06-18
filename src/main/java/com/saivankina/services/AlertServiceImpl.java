@@ -64,7 +64,8 @@ public class AlertServiceImpl implements AlertService{
     @Override
     public List<Alert> fetchAlertByTime(int hours) {
         Date date= new Date();
-        List<Alert> a = alertRepository.fetchAlertByTime(hours,date);
+//        List<Alert> a = alertRepository.fetchAlertByTime(hours,date,Priority.High);
+        List<Alert> a = alertRepository.fetchAlertByTime(Priority.High);
         if(a ==  null){
             throw new ResourceNotFoundException("no alerts witnin 2 hours");
         }
@@ -73,8 +74,8 @@ public class AlertServiceImpl implements AlertService{
 
 
     @Override
-    public List<Alert> fetchAllalertsOfVehivle(String  vin) {
-        List<Alert> alerts = alertRepository.fetchAllalertsOfVehivle(vin);
+    public List<Alert> fetchAllalertsOfVehicle(String  vin) {
+        List<Alert> alerts = alertRepository.fetchAllalertsOfVehicle(vin);
         if(alerts == null){
             throw new ResourceNotFoundException("There are no alerts for vehicle "+vin);
         }
