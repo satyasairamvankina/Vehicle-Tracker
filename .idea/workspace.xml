@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb9602bc-6fe6-4088-9118-35ebbb8fe5a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.integrationtest.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.integrationtest.properties" afterDir="false" />
-    </list>
+    <list default="true" id="fb9602bc-6fe6-4088-9118-35ebbb8fe5a9" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -356,7 +354,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.VehicleControllerTest">
+  <component name="RunManager" selected="JUnit.ReadingServiceImplTest">
     <configuration name="ReadingControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FleetManagementSpringREST" />
       <extension name="coverage">
@@ -368,22 +366,6 @@
       <option name="PACKAGE_NAME" value="com.saivankina.controller" />
       <option name="MAIN_CLASS_NAME" value="com.saivankina.controller.ReadingControllerTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReadingControllerTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FleetManagementSpringREST" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.saivankina.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.saivankina.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.saivankina.controller.ReadingControllerTest" />
-      <option name="METHOD_NAME" value="create" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -434,6 +416,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VehicleServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FleetManagementSpringREST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.saivankina.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.saivankina.services" />
+      <option name="MAIN_CLASS_NAME" value="com.saivankina.services.VehicleServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MavenTrucker[clean,install]" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -478,20 +475,20 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.ReadingControllerTest" />
-      <item itemvalue="JUnit.ReadingControllerTest.create" />
-      <item itemvalue="JUnit.ReadingServiceImplTest" />
       <item itemvalue="JUnit.VehicleControllerTest" />
       <item itemvalue="JUnit.VehicleControllerTest.findLastServiceDate" />
       <item itemvalue="Maven.MavenTrucker[clean,install]" />
       <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="JUnit.VehicleServiceImplTest" />
+      <item itemvalue="JUnit.ReadingServiceImplTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ReadingServiceImplTest" />
+        <item itemvalue="JUnit.VehicleServiceImplTest" />
         <item itemvalue="JUnit.VehicleControllerTest" />
         <item itemvalue="JUnit.ReadingControllerTest" />
         <item itemvalue="JUnit.VehicleControllerTest.findLastServiceDate" />
-        <item itemvalue="JUnit.ReadingControllerTest.create" />
-        <item itemvalue="JUnit.ReadingServiceImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -513,7 +510,7 @@
       <workItem from="1560011156061" duration="25612000" />
       <workItem from="1560163664694" duration="743000" />
       <workItem from="1560164736036" duration="4749000" />
-      <workItem from="1560719349215" duration="35176000" />
+      <workItem from="1560719349215" duration="35415000" />
     </task>
     <servers />
   </component>
@@ -550,7 +547,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104057000" />
+    <option name="totallyTimeSpent" value="104296000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
