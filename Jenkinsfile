@@ -43,9 +43,7 @@ node {
                     --secret spring.datasource.password \
                     ${DOCKERHUB_REPO}:${DOCKER_IMAGE_VERSION}
                 else
-                  docker service update \
-                    --image ${DOCKERHUB_REPO}:${DOCKER_IMAGE_VERSION} \
-                    ${DOCKER_SERVICE_ID}
+                  docker service update --image ${DOCKERHUB_REPO}:${DOCKER_IMAGE_VERSION} ${DOCKER_SERVICE_ID}
                 fi
             """
         }
