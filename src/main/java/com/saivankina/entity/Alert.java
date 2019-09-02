@@ -2,6 +2,7 @@ package com.saivankina.entity;
 
 import com.saivankina.Priority;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 
@@ -19,8 +20,9 @@ public class Alert {
     private Priority priority;
 
 //    @Temporal(TemporalType.TIMESTAMP)
-//    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false, updatable = true)
 //    @CreatedDate
+    @LastModifiedDate
     private Date createdAt;
 
     private String alertDescription;
@@ -32,7 +34,8 @@ public class Alert {
 
     public Alert() {
         this.alertId = UUID.randomUUID().toString();
-        this.createdAt = curretTimeStamp;
+//        this.createdAt = curretTimeStamp;
+        this.createdAt = new Date();
     }
 
 

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -70,6 +71,7 @@ public class VehicleController {
     @PutMapping()
     public  List<Vehicle> updateAll(@RequestBody Vehicle vehicles[]){
         List<Vehicle> vehicleList= new ArrayList<>();
+
         for(Vehicle veh: vehicles) {
             String id = veh.getVin();
              Vehicle vehicle = vehicleService.updateVehicle(id, veh);
@@ -83,10 +85,5 @@ public class VehicleController {
     public List<Alert> fetchAllalertsOfVehicle(@PathVariable("id")  String id){
         return alertService.fetchAllalertsOfVehicle(id);
     }
-
-
-
-
-
 
 }

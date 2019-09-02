@@ -30,6 +30,8 @@ public class AlertServiceImpl implements AlertService{
                 new ResourceNotFoundException("The alert with Id " +id+"doesn't exists")
        );
         return a.get();
+        //        Alert employee = repository.findById(id)
+//                .orElseThrow(() -> new EmployeeNotFoundException(id));
     }
 
     public Alert findByVin(String vin) {
@@ -38,6 +40,7 @@ public class AlertServiceImpl implements AlertService{
             throw new ResourceNotFoundException("Alert with Vin"+vin+"not found");
         }
         return a;
+
     }
 
     @Override
@@ -51,6 +54,7 @@ public class AlertServiceImpl implements AlertService{
             throw new ResourceBadRequest("Bad request for creating alert"+ alert);
         }
         return a;
+
     }
 
     public Alert creteAlertBasedOnParameter(Priority priority, String vin,String alertDescription){
@@ -59,6 +63,8 @@ public class AlertServiceImpl implements AlertService{
         alert.setVin(vin);
         alert.setPriority(priority);
         return createAlert(alert);
+
+
     }
 
     @Override
@@ -89,6 +95,7 @@ public class AlertServiceImpl implements AlertService{
 
     @Override
     public void checkAlerts(Readings readings1, Tires tire, Vehicle vehicle) {
+
 
         Tires tires = readings1.getTires();
         if(readings1.getEngineRpm() > vehicle.getRedlineRpm()){

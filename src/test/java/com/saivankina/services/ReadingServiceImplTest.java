@@ -8,6 +8,7 @@ import com.saivankina.entity.Tires;
 import com.saivankina.entity.Vehicle;
 import com.saivankina.exceptions.ResourceBadRequest;
 import com.saivankina.exceptions.ResourceNotFoundException;
+import io.swagger.models.auth.In;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -30,7 +31,6 @@ public class ReadingServiceImplTest {
 
     @TestConfiguration
     static class ReadingServiceTestConfiguration{
-
         @Bean
         public ReadingService readingService(){
             return new ReadingServiceImpl();
@@ -56,6 +56,7 @@ public class ReadingServiceImplTest {
 
     @Before
     public void startup(){
+
 
         Date a = new Date();
         Readings readings = new Readings();

@@ -21,10 +21,28 @@ public class AlertController {
        return alertService.findAll();
     }
 
-    @GetMapping("{time}")
+    @GetMapping("/{time}")
     public List<Alert> findAlertByTime(@RequestParam("time") int time){
+        System.out.println("Alerts time"+time);
        return alertService.fetchAlertByTime(time);
+//        Employee employee = repository.findById(id)
+//                .orElseThrow(() -> new EmployeeNotFoundException(id));
     }
+
+    //        @PutMapping("/employees/{id}")
+//        Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
+//
+//            return repository.findById(id)
+//                    .map(employee -> {
+//                        employee.setName(newEmployee.getName());
+//                        employee.setRole(newEmployee.getRole());
+//                        return repository.save(employee);
+//                    })
+//                    .orElseGet(() -> {
+//                        newEmployee.setId(id);
+//                        return repository.save(newEmployee);
+//                    });
+//        }
 
 
 }

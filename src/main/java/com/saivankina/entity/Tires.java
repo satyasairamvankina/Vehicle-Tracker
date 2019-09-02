@@ -1,9 +1,11 @@
 package com.saivankina.entity;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.UUID;
 
+@Embeddable
 @Entity
 public class Tires {
 
@@ -15,6 +17,7 @@ public class Tires {
     private Integer rearRight;
 
     public Tires() {
+
         this.tiresId = UUID.randomUUID().toString();
     }
 
@@ -70,7 +73,7 @@ public class Tires {
     @Override
     public String toString() {
         return "Tires{" +
-//                "tiresId='" + tiresId + '\'' +
+                "tiresId='" + tiresId + '\'' +
                 ", frontLeft=" + frontLeft +
                 ", frontRight=" + frontRight +
                 ", rearLeft=" + rearLeft +

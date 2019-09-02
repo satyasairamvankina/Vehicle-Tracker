@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin("*")
+//@CrossOrigin(origins = {"http://mocker.egen.io", "http://mocker.ennate.academy"})
 @RestController
 @RequestMapping(value="/readings")
 public class ReadingController {

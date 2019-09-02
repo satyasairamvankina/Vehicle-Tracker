@@ -20,7 +20,6 @@ public class VehicleServiceImpl implements VehicleService{
 
     @Override
     public List<Vehicle> findAl() {
-
         return (List<Vehicle>) vehicleRepository.findAll();
     }
 
@@ -35,7 +34,6 @@ public class VehicleServiceImpl implements VehicleService{
 
     @Transactional
     public Vehicle createVehicle(Vehicle vehicle) {
-
         Vehicle vehi = (Vehicle) vehicleRepository.save(vehicle);
         if(vehi == null){
             throw  new ResourceBadRequest("Vehicle is  "+ vehicle +" can not be created");
@@ -51,6 +49,8 @@ public class VehicleServiceImpl implements VehicleService{
             throw new ResourceNotFoundException("Employee with id " + id + " doesn't exist.");
         }
         return (Vehicle) vehicleRepository.save(vehicle);
+
+//
     }
 
     @Transactional

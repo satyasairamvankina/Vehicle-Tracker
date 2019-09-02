@@ -11,16 +11,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @Transactional
 public class ReadingServiceImpl implements  ReadingService {
 
+
     @Autowired
     private ReadingsRepository readingsRepository;
-
     @Autowired
     private TiresRepository tiresRepository;
 
@@ -57,6 +56,9 @@ public class ReadingServiceImpl implements  ReadingService {
             throw  new ResourceBadRequest("Vehicle is  "+ readings1 +" can not be created");
         }
         Vehicle vehicle = vehicleService.findById(readings1.getVin());
+//        System.out.println("**************************************************************************************");
+//
+//        alertService.checkAlerts(readings1,readings1.getTires(),vehicle);
 
         //checking alerts here
         alertService.checkAlerts(readings,tire,vehicle);
@@ -69,11 +71,18 @@ public class ReadingServiceImpl implements  ReadingService {
         if (!existing.isPresent()) {
             throw new ResourceNotFoundException("Employee with id " + id + " doesn't exist.");
         }
+        //checking alerts here everytime readings are updated
+        Vehicle vehicle = vehicleService.findById(reading.getVin());
+        System.out.println("**************************************************************************************");
+
+        alertService.checkAlerts(reading,reading.getTires(),vehicle);
+
         return (Readings) readingsRepository.save(reading);
     }
 
     @Override
     public void deleteReading(String id) {
-
+        Optional<Readings> readings = readingsRepository.findById(id);
+        readingsRepository.delete(readings.get());
     }
 }
